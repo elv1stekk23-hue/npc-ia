@@ -1,14 +1,8 @@
-# nixpacks.toml — Railway build config
-# Instala Node.js + Python + edge-tts
-
 [phases.setup]
-nixPkgs = ["python311", "python311Packages.pip", "nodejs_20"]
+nixPkgs = ["python311", "python311Packages.pip"]
 
 [phases.install]
-cmds = [
-  "npm install",
-  "pip install edge-tts --break-system-packages"
-]
+cmds = ["npm install", "pip install edge-tts"]
 
 [start]
 cmd = "node index.js"
